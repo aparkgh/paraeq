@@ -1,0 +1,2 @@
+# paraeq
+parametric equaliser
