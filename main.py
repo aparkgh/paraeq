@@ -1,8 +1,12 @@
-from scipy.signal import iirpeak
-import numpy as np
+from ui import EqualizerUI
+from audio import AudioEngine
+from PyQt5.QtWidgets import QApplication
+import sys
 
-def design_peak_filter(freq, fs, Q, gain_db):
-    gain = 10**(gain_db / 20)
-    b, a = iirpeak(freq / (fs / 2), Q)
-    b *= gain
-    return b, a
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    window = EqualizerUI()
+    audio = AudioEngine(window.eq_settings)
+    audio.start()
+    window.show()
+    sys.exit(app.exec_())
