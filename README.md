@@ -18,3 +18,14 @@ features:
 - add / remove frequency bands
 - adjust gain for each
 - have different slopes and add q slopes
+
+prereqs:
+- numpy
+- scipy
+- sounddevice
+- PyQt5
+- matplotlib
+
+  ```py
+  pip install -r requirements.txt
+  ```
