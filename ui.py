@@ -17,7 +17,7 @@ class EqualizerUI(QMainWindow):
         self.labels = []
 
         for i, (f, g, q) in enumerate(self.bands):
-            label = QLabel(f\"{f} Hz: {g} dB\", self)
+            label = QLabel(f"{f} Hz: {g} dB", self)
             slider = QSlider(Qt.Horizontal)
             slider.setMinimum(-12)
             slider.setMaximum(12)
@@ -34,7 +34,7 @@ class EqualizerUI(QMainWindow):
     def slider_changed(self, index, value):
         freq, _, q = self.bands[index]
         self.bands[index] = (freq, value, q)
-        self.labels[index].setText(f\"{freq} Hz: {value} dB\")
+        self.labels[index].setText(f"{freq} Hz: {value} dB")
 
     def eq_settings(self):
         return self.bands
